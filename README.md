@@ -8,7 +8,7 @@ Spec Editing Cheatsheet
 
 Checking out the HTML spec
 
-   1. the HTML spec is on GitHub https://github.com/w3c/html
+   1. the HTML spec is on GitHub http://github.com/viniciusbrazpereira/blog
 
    2. there are multiple branches - get master to build the spec
 
