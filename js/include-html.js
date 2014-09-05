@@ -1,4 +1,4 @@
 $(document).ready(function() {  	
   	$( "#menu-banner" ).load( "include/menu-banner.html" );
-  	$('a[href="index.html"]').addClass('active');
+  	$( "#artigos-social-media" ).load( "include/artigos-social-media.html" );
 }); 
