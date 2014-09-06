@@ -1,36 +1,12 @@
 
-<?php
-$to = "viniciusbrazpereira@gmail.com";
-$subject = "HTML email";
+<?php 
 
-$message = "
-<html>
-<head>
-<title>HTML email</title>
-</head>
-<body>
-<p>This email contains HTML Tags!</p>
-<table>
-<tr>
-<th>Firstname</th>
-<th>Lastname</th>
-</tr>
-<tr>
-<td>John</td>
-<td>Doe</td>
-</tr>
-</table>
-</body>
-</html>
-";
+$Name = "Da Duder"; //senders name 
+$email = "viniciusbrazpereira@gmail.com"; //senders e-mail adress 
+$recipient = "viniciusbrazpereira@gmail.com"; //recipient 
+$mail_body = "The text for the mail..."; //mail body 
+$subject = "Subject for reviever"; //subject 
+$header = "From: ". $Name . " <" . $email . ">\r\n"; //optional headerfields 
 
-// Always set content-type when sending HTML email
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-// More headers
-$headers .= 'From: viniciusbrazpereira@gmail.com' . "\r\n";
-$headers .= 'Cc: viniciusbrazpereira@gmail.com' . "\r\n";
-
-mail($to,$subject,$message,$headers);
+mail($recipient, $subject, $mail_body, $header); //mail command :) 
 ?>
