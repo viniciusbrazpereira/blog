@@ -1,6 +1,6 @@
 <?php
 
-require_once('/PHPMailer/PHPMailerAutoload.php');
+require 'PHPMailerAutoload.php';
 
 $mail = new PHPMailer();
 $mail->IsSMTP();
