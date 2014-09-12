@@ -1,6 +1,6 @@
 <?php
 
-require_once('PHPMailer/class.phpmailer.php');
+require_once('class.phpmailer.php');
 //include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
 
 $mail             = new PHPMailer();
@@ -41,5 +41,7 @@ if(!$mail->Send()) {
 } else {
   echo "Message sent!";
 }
+
+echo "PHPMailer";
 
 ?>
