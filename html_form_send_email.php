@@ -18,6 +18,8 @@ $mail->Subject = 'PHPMailer sendmail test';
 //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';
 
+$mail->Body    = "Hello";
+
 //send the message, check for errors
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
