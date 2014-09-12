@@ -9,7 +9,7 @@ $mail->SMTPSecure = 'tls';
 $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 $mail->Username = 'viniciusbrazpereira@gmail.com';
-$mail->Password = 'Antonio@';
+$mail->Password = 'valid password';
 $mail->SMTPAuth = true;
 
 $mail->From = 'viniciusbrazpereira@gmail.com';
