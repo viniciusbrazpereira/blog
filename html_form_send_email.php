@@ -17,13 +17,13 @@ $mail->isSMTP();
 // 0 = off (for production use)
 // 1 = client messages
 // 2 = client and server messages
-$mail->SMTPDebug = 1;
+$mail->SMTPDebug = 2;
 //Set the hostname of the mail server
 $mail->Host = "smtp.gmail.com";
 //Set the SMTP port number - likely to be 25, 465 or 587
-$mail->Port = 465;
+$mail->Port = 587;
 // SMTPSecure
-$mail->SMTPSecure = "ssl";
+$mail->SMTPSecure = "tls";
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
