@@ -31,7 +31,7 @@ $mail->CharSet = 'UTF-8';
 //Username to use for SMTP authentication
 $mail->Username = "viniciusbrazpereira@gmail.com";
 //Password to use for SMTP authentication
-$mail->Password = "Antonio@";
+$mail->Password = "";
 //Set who the message is to be sent from
 $mail->setFrom('viniciusbrazpereira@gmail.com', 'First Last');
 //Set an alternative reply-to address
