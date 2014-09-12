@@ -13,6 +13,8 @@ require 'PHPMailer/PHPMailerAutoload.php';
 $mail = new PHPMailer();
 //Tell PHPMailer to use SMTP
 $mail->isSMTP();
+//Whether to use SMTP authentication
+$mail->SMTPAuth = true;
 //Enable SMTP debugging
 // 0 = off (for production use)
 // 1 = client messages
@@ -21,11 +23,9 @@ $mail->SMTPDebug = 2;
 //Set the hostname of the mail server
 $mail->Host = "smtp.gmail.com";
 //Set the SMTP port number - likely to be 25, 465 or 587
-$mail->Port = 587;
+$mail->Port = 465;
 // SMTPSecure
-$mail->SMTPSecure = "tls";
-//Whether to use SMTP authentication
-$mail->SMTPAuth = true;
+$mail->SMTPSecure = "ssl";
 //Username to use for SMTP authentication
 $mail->Username = "viniciusbrazpereira@gmail.com";
 //Password to use for SMTP authentication
