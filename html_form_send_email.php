@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-require '../PHPMailer/PHPMailerAutoload.php';
+require '/PHPMailer/PHPMailerAutoload.php';
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer();
