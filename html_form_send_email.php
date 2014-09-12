@@ -9,7 +9,7 @@ $mail->SMTPSecure = 'tls';
 $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 $mail->Username = 'viniciusbrazpereira@gmail.com';
-$mail->Password = 'valid password';
+$mail->Password = 'Antonio@';
 $mail->SMTPAuth = true;
 
 $mail->From = 'viniciusbrazpereira@gmail.com';
@@ -30,7 +30,5 @@ else
 {
   echo "Message sent!";
 }
-
-phpinfo() ;
 
 ?>
