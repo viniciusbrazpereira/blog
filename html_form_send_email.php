@@ -21,13 +21,13 @@ $mail->SMTPAuth = true;
 // 2 = client and server messages
 $mail->SMTPDebug = 4;
 //Set the hostname of the mail server
-$mail->Host = "ssl://smtp.gmail.com";
+$mail->Host = "smtp.gmail.com";
 //Set the SMTP port number - likely to be 25, 465 or 587
-$mail->Port = 465;
+$mail->Port = 587;
 // SMTPSecure
-//$mail->SMTPSecure = "ssl";
+$mail->SMTPSecure = "tls";
 // CharSet
-$mail->CharSet = 'UTF-8';
+//$mail->CharSet = 'UTF-8';
 //Username to use for SMTP authentication
 $mail->Username = "viniciusbrazpereira@gmail.com";
 //Password to use for SMTP authentication
@@ -44,6 +44,8 @@ $mail->Subject = 'PHPMailer SMTP test';
 $mail->AltBody = 'This is a plain-text message body';
 // body
 $mail->Body    = "Hello";
+// Set word wrap to 50 characters
+$mail->WordWrap = 50;                                 
 
 //send the message, check for errors
 if (!$mail->send()) {
