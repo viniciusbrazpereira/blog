@@ -13,8 +13,8 @@ if(isset($_POST['email'])) {
 	$mail = new PHPMailer();
 	$mail->isSMTP();
 	$mail->Host = "smtp.gmail.com";
-	$mail->Port = 587;
-	$mail->SMTPSecure = "tls";
+	$mail->Port = 465;
+	$mail->SMTPSecure = "ssh";
 	$mail->CharSet = 'UTF-8';
 	//Username to use for SMTP authentication
 	$mail->Username = "viniciusbrazpereira@gmail.com";
