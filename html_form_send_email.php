@@ -2,12 +2,10 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>PHPMailer - SMTP test</title>
+    <title>PHPMailer - SMTP Send Email</title>
 </head>
 <body>
 <?php
-
-if(isset($_POST['email'])) {
 
 	require 'PHPMailer/PHPMailerAutoload.php';
 	$mail = new PHPMailer();
@@ -87,8 +85,6 @@ if(isset($_POST['email'])) {
 	} else {
 	    echo "Mailer Error: " . $mail->ErrorInfo;
 	}
-
-	exit;
-}?>
+?>
 </body>
 </html>
