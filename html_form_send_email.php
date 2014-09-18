@@ -23,9 +23,9 @@ if(isset($_POST['email'])) {
 	//Password to use for SMTP authentication
 	$mail->Password = "Antonio@";
 	//Set who the message is to be sent from
-	$mail->setFrom('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
+	$mail->setFrom(''.clean_string($email_from), ''.clean_string($first_name));
 	//Set an alternative reply-to address
-	$mail->addReplyTo('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
+	$mail->addReplyTo(''.clean_string($email_from), ''.clean_string($first_name));
 
 	$first_name = $_POST['first_name']; // required
     $email_from = $_POST['email']; // required
@@ -73,7 +73,7 @@ if(isset($_POST['email'])) {
     }
 
     //Set who the message is to be sent to
-	$mail->addAddress(''.clean_string($email_from), ''.clean_string($first_name));
+	$mail->addAddress('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
 	//Set the subject line
 	$mail->Subject = 'Website www.viniciusbrazpereira.com.br contact you.';
 	//Replace the plain text body with one created manually
