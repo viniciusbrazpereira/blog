@@ -19,7 +19,7 @@ $mail->SMTPAuth = true;
 // 0 = off (for production use)
 // 1 = client messages
 // 2 = client and server messages
-$mail->SMTPDebug = 4;
+$mail->SMTPDebug = 2;
 //Set the hostname of the mail server
 $mail->Host = "smtp.gmail.com";
 //Set the SMTP port number - likely to be 25, 465 or 587
@@ -39,7 +39,7 @@ $mail->addReplyTo('viniciusbrazpereira@gmail.com', 'First Last');
 //Set who the message is to be sent to
 $mail->addAddress('viniciusbrazpereira@gmail.com', 'John Doe');
 //Set the subject line
-$mail->Subject = 'PHPMailer SMTP test';
+$mail->Subject = 'PHPMailer SMTP test Email';
 //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';
 // body
