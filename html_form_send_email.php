@@ -11,21 +11,6 @@ if(isset($_POST['email'])) {
 
 	require 'PHPMailer/PHPMailerAutoload.php';
 	$mail = new PHPMailer();
-	$mail->isSMTP();
-	$mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
-	$mail->SMTPAuth = true;  // authentication enabled
-	$mail->Host = "smtp.gmail.com";
-	$mail->Port = 465;
-	$mail->SMTPSecure = "ssl";
-	$mail->CharSet = 'UTF-8';
-	//Username to use for SMTP authentication
-	$mail->Username = "viniciusbrazpereira@gmail.com";
-	//Password to use for SMTP authentication
-	$mail->Password = "Antonio@";
-	//Set who the message is to be sent from
-	$mail->setFrom('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
-	//Set an alternative reply-to address
-	$mail->addReplyTo('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
 
 	$first_name = $_POST['first_name']; // required
     $email_from = $_POST['email']; // required
@@ -72,8 +57,24 @@ if(isset($_POST['email'])) {
       return str_replace($bad,"",$string);
     }
 
+    $mail->isSMTP();
+	$mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
+	$mail->SMTPAuth = true;  // authentication enabled
+	$mail->Host = "smtp.gmail.com";
+	$mail->Port = 465;
+	$mail->SMTPSecure = "ssl";
+	$mail->CharSet = 'UTF-8';
+	//Username to use for SMTP authentication
+	$mail->Username = "viniciusbrazpereira@gmail.com";
+	//Password to use for SMTP authentication
+	$mail->Password = "Antonio@";
+	//Set who the message is to be sent from
+	$mail->setFrom('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
+	//Set an alternative reply-to address
+	$mail->addReplyTo(''.clean_string($email_from), ''.clean_string($first_name));
+
     //Set who the message is to be sent to
-	$mail->addAddress(''.clean_string($email_from), ''.clean_string($first_name));
+	$mail->addAddress('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
 	//Set the subject line
 	$mail->Subject = 'Website www.viniciusbrazpereira.com.br contact you.';
 	//Replace the plain text body with one created manually
