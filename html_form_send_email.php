@@ -7,9 +7,9 @@
 <body>
 <?php
 
-if(isset($_POST['email'])) {
+
 	echo "Email;1313";
-}
+
 
 ?>
 </body>
