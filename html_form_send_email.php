@@ -84,7 +84,7 @@ if(isset($_POST['email'])) {
 	$email_message .= "Nome: ".clean_string($first_name)."\n";
 	$email_message .= "Email: ".clean_string($email_from)."\n";
 	$email_message .= "Comments: ".clean_string($comments)."\n";
-	$mail->Body    = $email_message;
+	$mail->Body    = nl2br($email_message);
 	// Set word wrap to 50 characters
 	//$mail->WordWrap = 50;   
 
