@@ -25,6 +25,12 @@ if(isset($_POST['email'])) {
 	//Set an alternative reply-to address
 	$mail->addReplyTo('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
 
+	$first_name = $_POST['first_name']; // required
+    $email_from = $_POST['email']; // required
+    $comments = $_POST['comments']; // required
+     
+    $error_message = "";
+
 	function died($error) {
         // your error code can go here
         echo "We are very sorry, but there were error(s) found with the form you submitted. ";
@@ -40,12 +46,6 @@ if(isset($_POST['email'])) {
         !isset($_POST['comments'])) {
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
-
-    $first_name = $_POST['first_name']; // required
-    $email_from = $_POST['email']; // required
-    $comments = $_POST['comments']; // required
-     
-    $error_message = "";
     
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
 	if(!preg_match($email_exp,$email_from)) {
