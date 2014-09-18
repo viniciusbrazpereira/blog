@@ -69,7 +69,7 @@ if(isset($_POST['email'])) {
 	//Password to use for SMTP authentication
 	$mail->Password = "Antonio@";
 	//Set who the message is to be sent from
-	$mail->setFrom('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
+	$mail->setFrom(''.clean_string($email_from), ''.clean_string($first_name));
 	//Set an alternative reply-to address
 	$mail->addReplyTo(''.clean_string($email_from), ''.clean_string($first_name));
 
