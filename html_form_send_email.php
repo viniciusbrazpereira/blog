@@ -59,7 +59,7 @@ if(isset($_POST['email'])) {
     }
 
     $mail->isSMTP();
-	$mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
+	//$mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
 	$mail->SMTPAuth = true;  // authentication enabled
 	$mail->Host = "smtp.gmail.com";
 	$mail->Port = 465;
