@@ -72,15 +72,19 @@ if(isset($_POST['email'])) {
 	$mail->setFrom(''.clean_string($email_from), ''.clean_string($first_name));
 	//Set an alternative reply-to address
 	$mail->addReplyTo(''.clean_string($email_from), ''.clean_string($first_name));
-
     //Set who the message is to be sent to
 	$mail->addAddress('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
 	//Set the subject line
 	$mail->Subject = 'Website www.viniciusbrazpereira.com.br contact you.';
 	//Replace the plain text body with one created manually
 	$mail->AltBody = 'This is a plain-text message body';
-    // body
-	$mail->Body    = "Comments: ".clean_string($comments)."\n";
+
+	// Mensagem a ser enviada.
+	$email_message = "Form details below.\n\n";
+	$email_message .= "Nome: ".clean_string($first_name)."\n";
+	$email_message .= "Email: ".clean_string($email_from)."\n";
+	$email_message .= "Comments: ".clean_string($comments)."\n";
+	$mail->Body    = $email_message;
 	// Set word wrap to 50 characters
 	//$mail->WordWrap = 50;   
 
