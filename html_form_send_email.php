@@ -12,6 +12,8 @@ if(isset($_POST['email'])) {
 	require 'PHPMailer/PHPMailerAutoload.php';
 	$mail = new PHPMailer();
 	$mail->isSMTP();
+	$mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
+	$mail->SMTPAuth = true;  // authentication enabled
 	$mail->Host = "smtp.gmail.com";
 	$mail->Port = 465;
 	$mail->SMTPSecure = "ssl";
