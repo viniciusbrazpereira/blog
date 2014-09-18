@@ -91,7 +91,7 @@ if(isset($_POST['email'])) {
 
 	//send the message, check for errors
 	if ($mail->send()) {
-	   header("Location: http://viniciusbrazpereira.com.br/contato.html");
+	   echo "Email enviado. ";
 	} else {
 	    echo "Mailer Error: " . $mail->ErrorInfo;
 	}
