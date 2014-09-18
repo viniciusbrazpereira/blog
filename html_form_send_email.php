@@ -8,6 +8,10 @@
 <?php
 
 if(isset($_POST['email'])) {
+echo "Erro o email"
+}
+
+if(isset($_POST['email'])) {
 
 	require 'PHPMailer/PHPMailerAutoload.php';
 	$mail = new PHPMailer();
