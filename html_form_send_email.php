@@ -8,7 +8,7 @@
 <?php
 
 if(isset($_POST['email'])) {
-echo "Erro o email"
+echo "Erro o email";
 }
 
 if(isset($_POST['email'])) {
