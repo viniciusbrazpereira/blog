@@ -155,7 +155,7 @@
             <div class="well">
                 <h2>Entre em contato</h2>
 
-                <form role="form" id="feedbackForm" method="post" action="contatoSelf.php">
+                <form role="form" id="feedbackForm" method="post" action="contato.php">
                     <div class="form-group">
                       <label class="sr-only" for="first_name">Nome</label>
                       <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Nome" required="true">
