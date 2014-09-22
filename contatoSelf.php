@@ -44,7 +44,7 @@
     if(isset($_POST['email'])) {
 
         require 'PHPMailer/PHPMailerAutoload.php';
-        
+
         $mail = new PHPMailer();
 
         $first_name = $_POST['first_name']; // required
@@ -125,9 +125,9 @@
 
         //send the message, check for errors
         if ($mail->send()) {
-           echo "<div class="alert alert-success" role="alert">Email enviado.</div>";
+           echo '<div class="alert alert-success" role="alert">Email enviado.</div>';
         } else {
-            echo "<div class="alert alert-danger" role="alert">Email não enviado.(erro)</div>";
+            echo '<div class="alert alert-danger" role="alert">Email não enviado.(erro)</div>';
         }
       } 
     ?>
