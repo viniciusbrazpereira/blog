@@ -69,22 +69,22 @@
         }
         
         $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
-      if(!preg_match($email_exp,$email_from)) {
-        $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
-      }
-      
-      $string_exp = "/^[A-Za-z .'-]+$/";
-      if(!preg_match($string_exp,$first_name)) {
-        $error_message .= 'The First Name you entered does not appear to be valid.<br />';
-      }
+        if(!preg_match($email_exp,$email_from)) {
+          $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+        }
+        
+        $string_exp = "/^[A-Za-z .'-]+$/";
+        if(!preg_match($string_exp,$first_name)) {
+          $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+        }
 
-      if(strlen($comments) < 2) {
-        $error_message .= 'The Comments you entered do not appear to be valid.<br />';
-      }
+        if(strlen($comments) < 2) {
+          $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+        }
 
-      if(strlen($error_message) > 0) {
-        died($error_message);
-      }
+        if(strlen($error_message) > 0) {
+          died($error_message);
+        }
          
         function clean_string($string) {
           $bad = array("content-type","bcc:","to:","cc:","href");
@@ -92,54 +92,49 @@
         }
 
         $mail->isSMTP();
-      //$mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
-      $mail->SMTPAuth = true;  // authentication enabled
-      $mail->Host = "smtp.gmail.com";
-      $mail->Port = 465;
-      $mail->SMTPSecure = "ssl";
-      //$mail->CharSet = 'UTF-8';
-      //Username to use for SMTP authentication
-      $mail->Username = "viniciusbrazpereira@gmail.com";
-      //Password to use for SMTP authentication
-      $mail->Password = "Antonio@";
-      //Set who the message is to be sent from
-      $mail->setFrom(''.clean_string($email_from), ''.clean_string($first_name));
-      //Set an alternative reply-to address
-      $mail->addReplyTo(''.clean_string($email_from), ''.clean_string($first_name));
-        //Set who the message is to be sent to
-      $mail->addAddress('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
-      //Set the subject line
-      $mail->Subject = 'Website www.viniciusbrazpereira.com.br contact you.';
-      //Replace the plain text body with one created manually
-      $mail->AltBody = 'This is a plain-text message body';
+        //$mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
+        $mail->SMTPAuth = true;  // authentication enabled
+        $mail->Host = "smtp.gmail.com";
+        $mail->Port = 465;
+        $mail->SMTPSecure = "ssl";
+        //$mail->CharSet = 'UTF-8';
+        //Username to use for SMTP authentication
+        $mail->Username = "viniciusbrazpereira@gmail.com";
+        //Password to use for SMTP authentication
+        $mail->Password = "Antonio@";
+        //Set who the message is to be sent from
+        $mail->setFrom(''.clean_string($email_from), ''.clean_string($first_name));
+        //Set an alternative reply-to address
+        $mail->addReplyTo(''.clean_string($email_from), ''.clean_string($first_name));
+          //Set who the message is to be sent to
+        $mail->addAddress('viniciusbrazpereira@gmail.com', 'Vinicius Braz Pereira');
+        //Set the subject line
+        $mail->Subject = 'Website www.viniciusbrazpereira.com.br contact you.';
+        //Replace the plain text body with one created manually
+        $mail->AltBody = 'This is a plain-text message body';
 
-      // Mensagem a ser enviada.
-      $email_message = "Form details below.\n\n";
-      $email_message .= "Nome: ".clean_string($first_name)."\n";
-      $email_message .= "Email: ".clean_string($email_from)."\n";
-      $email_message .= "Comments: ".clean_string($comments)."\n";
-      $mail->Body    = nl2br($email_message);
-      // Set word wrap to 50 characters
-      //$mail->WordWrap = 50;   
-      
-    } 
+        // Mensagem a ser enviada.
+        $email_message = "Form details below.\n\n";
+        $email_message .= "Nome: ".clean_string($first_name)."\n";
+        $email_message .= "Email: ".clean_string($email_from)."\n";
+        $email_message .= "Comments: ".clean_string($comments)."\n";
+        $mail->Body    = nl2br($email_message);
+        // Set word wrap to 50 characters
+        //$mail->WordWrap = 50;   
+
+        //send the message, check for errors
+        if ($mail->send()) {
+           echo "<div class="alert alert-success" role="alert">Email enviado.</div>";
+        } else {
+            echo "<div class="alert alert-danger" role="alert">Email não enviado.(erro)</div>";
+        }
+        
+      } 
     ?>
 
     <div id="menu-banner"></div>
 
     <div class="container">
-
-      <?php
-        if(isset($_POST['email'])) {
-            //send the message, check for errors
-            if ($mail->send()) {
-               echo "<div class="alert alert-success" role="alert">Email enviado.</div>";
-            } else {
-                echo "<div class="alert alert-danger" role="alert">Email não enviado.(erro)</div>";
-            }
-        }
-
-      ?>
 
         <div id="contact_form" class="row">
             <div class="col-12 col-sm-12 col-lg-12">
