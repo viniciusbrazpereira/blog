@@ -122,13 +122,6 @@
         $mail->Body    = nl2br($email_message);
         // Set word wrap to 50 characters
         //$mail->WordWrap = 50;   
-
-        //send the message, check for errors
-        if ($mail->send()) {
-           echo '<div class="alert alert-success" role="alert">Email enviado.</div>';
-        } else {
-            echo '<div class="alert alert-danger" role="alert">Email não enviado.(erro)</div>';
-        }
       } 
     ?>
 
@@ -136,6 +129,17 @@
 
     <div class="container">
 
+        <?php
+
+            if(isset($_POST['email'])) {
+                //send the message, check for errors
+                if ($mail->send()) {
+                   echo '<div class="alert alert-success" role="alert">Email enviado.</div>';
+                } else {
+                    echo '<div class="alert alert-danger" role="alert">Email não enviado.(erro)</div>';
+                }
+            } 
+        ?>
         <div id="contact_form" class="row">
             <div class="col-12 col-sm-12 col-lg-12">
             <div class="well">
