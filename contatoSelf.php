@@ -134,9 +134,19 @@
             if(isset($_POST['email'])) {
                 //send the message, check for errors
                 if ($mail->send()) {
-                   echo '<div class="alert alert-success" role="alert">Email enviado.</div>';
+                   echo '<div class="alert alert-success" role="alert">Email enviado.
+                            <button type="button" class="close" data-dismiss="alert">
+                                <span aria-hidden="true">&times;</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                        </div>';
                 } else {
-                    echo '<div class="alert alert-danger" role="alert">Email não enviado.(erro)</div>';
+                    echo '<div class="alert alert-danger" role="alert">Email não enviado.(erro)
+                              <button type="button" class="close" data-dismiss="alert">
+                                  <span aria-hidden="true">&times;</span>
+                                  <span class="sr-only">Close</span>
+                              </button>
+                          </div>';
                 }
             } 
         ?>
